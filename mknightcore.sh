@@ -33,6 +33,9 @@ do
 		shift 1
 	fi
 done
+
+sox -v >/dev/null 2>&1 || { echo >&2 "I require sox but it's not installed.  Aborting."; exit 1; }
+
 if [ -z "$FILE" ]
 then
 	exit 1
